@@ -24,11 +24,11 @@ public class CarsController {
 	@GetMapping(value = "/cars")
 	public String printWelcome(ModelMap model, @RequestParam(value = "count", required = false) Integer count) {
 		List<String> messages = new ArrayList<>();
-		List<Car> carss = carService.getCars(count);
-		for (Car car : carss) {
-			messages.add(car.toString());
-		}
-		model.addAttribute("messages", messages);
+//		List<Car> carss = carService.getCars(count);
+//		for (Car car : carss) {
+//			messages.add(car.toString());
+//		}
+		model.addAttribute("cars",carService.getCars(count));
 		return "cars";
 	}
 	
